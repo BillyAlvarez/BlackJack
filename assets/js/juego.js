@@ -4,17 +4,18 @@ const miModulo = (() => {
 
     // Variables globales
     let deck = []; // Baraja de cartas
-    const tipos = ['C', 'D', 'H', 'S'], // Tipos de cartas (Corazones, Diamantes, etc.)
-        especiales = ['A', 'J', 'Q', 'K']; // Valores especiales de las cartas (As, Jota, Reina, Rey)
+    const tipos      = ['C', 'D', 'H', 'S'], // Tipos de cartas (Corazones, Diamantes, etc.)
+          especiales = ['A', 'J', 'Q', 'K']; // Valores especiales de las cartas (As, Jota, Reina, Rey)
 
-    let puntosJugadores = []; // Puntos de los jugadores
+    let puntosJugadores= []; // Puntos de los jugadores
 
     // Referencias del HTML
-    const btnPedir = document.querySelector('#btnPedir'), btnDetener = document.querySelector('#btnDetener'),
-        btnNuevo = document.querySelector('#btnNuevo');
+    const btnPedir   = document.querySelector('#btnPedir'),
+          btnDetener = document.querySelector('#btnDetener'),
+          btnNuevo   = document.querySelector('#btnNuevo');
 
     const divCartasJugadores = document.querySelectorAll('.divCartas'), // Contenedores de las cartas de los jugadores en el HTML
-        puntosHTML = document.querySelectorAll('small'); // Elementos HTML donde se muestran los puntos de los jugadores
+          puntosHTML     = document.querySelectorAll('small'); // Elementos HTML donde se muestran los puntos de los jugadores
 
     // Función para inicializar el juego
     const inicializarJuego = (numJugadores = 2) => {
@@ -42,21 +43,18 @@ const miModulo = (() => {
     const crearDeck = () => {
         // Se crea un mazo vacío
         deck = [];
-
         // Se agregan las cartas del 2 al 10 para cada tipo
         for (let i = 2; i <= 10; i++) {
             for (let tipo of tipos) {
                 deck.push(i + tipo);
             }
         }
-
         // Se agregan las cartas especiales para cada tipo
         for (let tipo of tipos) {
             for (let esp of especiales) {
                 deck.push(esp + tipo);
             }
         }
-
         // Se mezcla el mazo y se devuelve
         return _.shuffle(deck);
     }
