@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blackjack</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+</head>
+<body>
+
+<header class="titulo">
+    Blackjack
+</header>
+
+<div class="row mt-2">
+    <div id="divBotones" class="col text-center">
+
+        <button id="btnNuevo" class="btn btn-danger">Nuevo Juego</button>
+        <button id="btnPedir" disabled="disabled" class="btn btn-primary">Pedir carta</button>
+        <button id="btnDetener" disabled="disabled" class="btn btn-primary">Detener</button>
+
+    </div>
+</div>
+
+<div class="row container">
+    <div class="col">
+
+        <h1>Tus Cartas - <small>0</small></h1>
+        <div id="jugador-cartas" class="divCartas">
+            <!-- <img class="carta" src="assets/cartas/2C.png"> -->
+        </div>
+
+    </div>
+</div>
+
+<div class="row container mt-2">
+    <div class="col">
+
+        <h1>Cartas de la Computadora - <small>0</small></h1>
+        <div id="computadora-cartas" class="divCartas">
+            <!-- <img class="carta" src="assets/cartas/3C.png"> -->
+        </div>
+
+    </div>
+</div>
+
+
+<script src="assets/js/underscore-min.js"></script>
+<script src="assets/js/juego.js"></script>
+
+<script>
+
+    // inicializarJuego();
+    console.log(miModulo);
+
+    document.querySelector('#btnNuevo').addEventListener('click', () => {
+        miModulo.nuevoJuego();
+    })
+
+</script>
+
+<!-- Footer con Instrucciones -->
+<footer class="mt-5 bg-dark text-light py-4">
+    <div class="container">
+        <h5 class="text-center mb-3"><i class="fas fa-info-circle"></i> Instrucciones del Juego</h5>
+        <ul class="list-unstyled">
+            <li>🂠 El objetivo es acercarse lo más posible a 21 sin pasarse.</li>
+            <li>🃏 Haz clic en <strong>"Pedir Carta"</strong> para robar una nueva carta del mazo.</li>
+            <li>✋ Haz clic en <strong>"Detener"</strong> para finalizar tu turno y dejar que juegue la computadora.</li>
+            <li>💥 Si tu puntaje supera los 21, pierdes automáticamente.</li>
+            <li>🏆 La computadora intentará ganar sin pasarse de 21. ¡Suerte!</li>
+        </ul>
+        <p class="text-center mt-3 small text-muted">Desarrollado por Billy Álvarez · Blackjack JS © 2025</p>
+    </div>
+</footer>
+</body>
+</html>
