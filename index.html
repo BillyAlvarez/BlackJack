@@ -64,19 +64,32 @@
 
 </script>
 
-<!-- Footer con Instrucciones -->
+<!-- Footer con instrucciones colapsables -->
 <footer class="mt-5 bg-dark text-light py-4">
     <div class="container">
-        <h5 class="text-center mb-3"><i class="fas fa-info-circle"></i> Instrucciones del Juego</h5>
-        <ul class="list-unstyled">
-            <li>🂠 El objetivo es acercarse lo más posible a 21 sin pasarse.</li>
-            <li>🃏 Haz clic en <strong>"Pedir Carta"</strong> para robar una nueva carta del mazo.</li>
-            <li>✋ Haz clic en <strong>"Detener"</strong> para finalizar tu turno y dejar que juegue la computadora.</li>
-            <li>💥 Si tu puntaje supera los 21, pierdes automáticamente.</li>
-            <li>🏆 La computadora intentará ganar sin pasarse de 21. ¡Suerte!</li>
-        </ul>
+        <h5 class="text-center mb-3">
+            <i class="fas fa-info-circle"></i>
+            <button class="btn btn-outline-light btn-sm" type="button" data-toggle="collapse" data-target="#instruccionesJuego" aria-expanded="false" aria-controls="instruccionesJuego">
+                Ver Instrucciones
+            </button>
+        </h5>
+
+        <div class="collapse" id="instruccionesJuego">
+            <ul class="list-unstyled">
+                <li>🂠 El objetivo es acercarse lo más posible a 21 sin pasarse.</li>
+                <li>🃏 Haz clic en <strong>"Pedir Carta"</strong> para robar una nueva carta del mazo.</li>
+                <li>✋ Haz clic en <strong>"Detener"</strong> para finalizar tu turno y dejar que juegue la computadora.</li>
+                <li>💥 Si tu puntaje supera los 21, pierdes automáticamente.</li>
+                <li>🏆 La computadora intentará ganar sin pasarse de 21. ¡Suerte!</li>
+            </ul>
+        </div>
+
         <p class="text-center mt-3 small text-muted">Desarrollado por Billy Álvarez · Blackjack JS © 2025</p>
     </div>
 </footer>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js" defer></script>
+
 </body>
 </html>
